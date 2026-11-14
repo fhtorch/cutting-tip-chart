@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oxy-Fuel Cutting Tip Size Chart &amp; Picker | FHtorch</title>
+<meta name="description" content="Free oxy-fuel cutting tip size chart and picker: Victor-type 1-101 and GPN, Harris-type 6290 and 6290NXM, British-style ANM, ANME and PNME tips. Enter steel thickness and fuel gas to see tip size, orifice and pressures. Open data by FHtorch.">
+<meta property="og:title" content="Oxy-Fuel Cutting Tip Size Chart & Picker | FHtorch">
+<meta property="og:description" content="Pick the right cutting tip size by steel thickness and fuel gas. Open data from FHtorch, an oxy-fuel torch factory in Ningbo, China.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "FHtorch oxy-fuel cutting tip chart",
+  "description": "Cutting tip sizes, orifice diameters, cutting thickness ranges and oxygen and fuel gas pressures for Victor-type 1-101 and GPN, Harris-type 6290 and 6290NXM, British-style ANM, ANME and PNME, and type A LPG cutting tips, taken from FHtorch product pages.",
+  "url": "https://fhtorch.github.io/cutting-tip-chart/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "keywords": ["cutting tip size chart", "oxy-fuel cutting", "cutting torch tips", "1-101", "GPN", "6290", "6290NXM", "ANME", "PNME"],
+  "creator": {"@type": "Organization", "name": "FHtorch", "url": "https://fhtorch.com"},
+  "distribution": [
+    {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://fhtorch.github.io/cutting-tip-chart/data/cutting-tips.csv"},
+    {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://fhtorch.github.io/cutting-tip-chart/data/cutting-tips.json"}
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --text: #1d1d1f; --muted: #5f6368; --line: #dfe3e8;
+    --brand: #0b4aa2; --brand-2: #1a73e8; --accent: #e8f0fe; --hit: #fff7e0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111418; --card: #1a1f26; --text: #e8eaed; --muted: #a0a6ad; --line: #2c333c;
+            --brand: #7cb3ff; --brand-2: #8ab4f8; --accent: #1d2a3d; --hit: #2e2a1c; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 28px 0 8px; }
+  .brand { font-weight: 700; color: var(--brand); text-decoration: none; letter-spacing: .2px; }
+  h1 { font-size: clamp(24px, 4.6vw, 34px); line-height: 1.2; margin: 6px 0 8px; }
+  .lead { color: var(--muted); margin: 0 0 18px; max-width: 760px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin: 14px 0; }
+  form { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; align-items: end; }
+  label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 6px; }
+  select, input { width: 100%; font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px;
+                  background: var(--card); color: var(--text); }
+  .thick { display: flex; gap: 8px; }
+  .thick input { flex: 1; min-width: 0; }
+  .thick select { width: 84px; flex: none; }
+  .summary { margin: 4px 0 10px; font-weight: 600; }
+  .note { color: var(--muted); font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 13px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+  tr.hit td { background: var(--hit); }
+  .scroll { overflow-x: auto; }
+  .tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--accent); color: var(--brand); margin-left: 6px; }
+  a { color: var(--brand-2); }
+  h2 { font-size: 22px; margin: 26px 0 6px; }
+  h3 { font-size: 18px; margin: 18px 0 4px; }
+  footer { color: var(--muted); font-size: 14px; padding: 18px 0 40px; border-top: 1px solid var(--line); margin-top: 26px; }
+  .cta { display: inline-block; margin-top: 8px; padding: 10px 16px; border-radius: 10px; background: var(--brand-2); color: #fff; text-decoration: none; font-weight: 600; }
+  @media (prefers-color-scheme: dark) { .cta { color: #111418; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="https://fhtorch.com/?utm_source=github&amp;utm_medium=tool&amp;utm_campaign=cutting-tip-chart">FHtorch</a>
+    <h1>Oxy-fuel cutting tip size chart &amp; picker</h1>
+    <p class="lead">Enter the steel thickness and your fuel gas to see which tip sizes cover it, with the orifice size and the oxygen and fuel gas pressures from the chart. Covers Victor-type 1-101 and GPN, Harris-type 6290 and 6290NXM, British-style ANM, ANME and PNME, and type A LPG nozzles.</p>
+  </header>
+
+  <section class="card" aria-labelledby="pick-title">
+    <h2 id="pick-title" style="margin-top:0">Find a tip size</h2>
+    <form id="f" onsubmit="return false">
+      <div>
+        <label for="gas">Fuel gas</label>
+        <select id="gas">
+          <option value="">Any</option>
+          <option value="acetylene">Acetylene</option>
+          <option value="propane">Propane</option>
+          <option value="natural gas">Natural gas</option>
+          <option value="LPG">LPG</option>
+        </select>
+      </div>
+      <div>
+        <label for="t">Steel thickness</label>
+        <div class="thick">
+          <input id="t" type="number" min="0" step="any" value="20" inputmode="decimal">
+          <select id="u" aria-label="Unit"><option value="mm">mm</option><option value="in">in</option></select>
+        </div>
+      </div>
+      <div>
+        <label for="style">Torch style</label>
+        <select id="style"><option value="">Any</option></select>
+      </div>
+    </form>
+    <p class="summary" id="sum" aria-live="polite"></p>
+    <div class="scroll"><table id="res"></table></div>
+    <p class="note">Values are FHtorch chart values for FHtorch tips. Always follow your torch and regulator manufacturer's instructions and local safety rules.</p>
+  </section>
+
+  <section aria-labelledby="chart-title">
+    <h2 id="chart-title">Full chart</h2>
+    <p class="note">Download the data: <a href="data/cutting-tips.csv">CSV</a> · <a href="data/cutting-tips.json">JSON</a> (CC BY 4.0, credit "FHtorch (fhtorch.com)").</p>
+    <div id="chart"></div>
+  </section>
+
+  <section class="card">
+    <h2 style="margin-top:0">About FHtorch</h2>
+    <p>FHtorch supplies distributors and welding supply stores with cutting torches, welding torches, cutting and welding tips, flashback arrestors and torch kits, made at our family-owned factory in Ningbo, China. MOQ 100–300 units per model; custom logo marking (OEM) available.</p>
+    <a class="cta" href="https://fhtorch.com/contact/?utm_source=github&amp;utm_medium=tool&amp;utm_campaign=cutting-tip-chart">Request a quote</a>
+  </section>
+
+  <footer>
+    <p>Data from FHtorch product pages, licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Code: MIT. Source: <a href="https://github.com/fhtorch/cutting-tip-chart">github.com/fhtorch/cutting-tip-chart</a>.</p>
+    <p>Victor® and Harris® are trademarks of their respective owners. FHtorch is not affiliated with them; "Victor-type" and "Harris-type" describe the style and fit of FHtorch products.</p>
+  </footer>
+</div>
+<script src="data/cutting-tips.js"></script>
+<script>
+(function () {
+  var TIPS = window.FH_TIPS || [];
+  var PSI = 145.0377;
+  var UTM = "?utm_source=github&utm_medium=tool&utm_campaign=cutting-tip-chart";
+  var $ = function (id) { return document.getElementById(id); };
+
+  function n(x) { return Math.round(x * 1000) / 1000; }
+  function range(a, b, unit) {
+    if (a === null || a === undefined) return "–";
+    return (a === b ? n(a) : n(a) + "–" + n(b)) + (unit ? " " + unit : "");
+  }
+  function psi(a, b) {
+    if (a === null || a === undefined) return "";
+    var x = Math.round(a * PSI), y = Math.round(b * PSI);
+    return " (" + (x === y ? x : x + "–" + y) + " psi)";
+  }
+  function inch(a, b) {
+    return " (" + (a / 25.4).toFixed(2) + "–" + (b / 25.4).toFixed(2) + " in)";
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
+
+  var styles = [];
+  TIPS.forEach(function (r) { if (styles.indexOf(r.torch_style) < 0) styles.push(r.torch_style); });
+  styles.forEach(function (s) { var o = document.createElement("option"); o.value = s; o.textContent = s; $("style").appendChild(o); });
+
+  function head() {
+    return "<tr><th>Tip</th><th>Size</th><th>Orifice</th><th>Cutting range</th><th>Oxygen</th><th>Fuel gas</th><th>Fits</th></tr>";
+  }
+  function row(r, hit) {
+    return "<tr" + (hit ? ' class="hit"' : "") + "><td><a href=\"" + esc(r.source_url + UTM) + "\">" + esc(r.family) + "</a>" +
+      "<span class=\"tag\">" + esc(r.fuel_gases.join(", ")) + "</span></td>" +
+      "<td><strong>" + esc(r.size) + "</strong></td>" +
+      "<td>" + range(r.orifice_mm, r.orifice_mm, "mm") + "</td>" +
+      "<td>" + range(r.cut_min_mm, r.cut_max_mm, "mm") + inch(r.cut_min_mm, r.cut_max_mm) + "</td>" +
+      "<td>" + range(r.oxygen_mpa_min, r.oxygen_mpa_max, "MPa") + psi(r.oxygen_mpa_min, r.oxygen_mpa_max) + "</td>" +
+      "<td>" + range(r.fuel_mpa_min, r.fuel_mpa_max, "MPa") + psi(r.fuel_mpa_min, r.fuel_mpa_max) + "</td>" +
+      "<td>" + esc(r.torch_style) + "</td></tr>";
+  }
+
+  function update() {
+    var gas = $("gas").value, style = $("style").value;
+    var t = parseFloat($("t").value);
+    var mm = $("u").value === "in" ? t * 25.4 : t;
+    if (!(mm > 0)) { $("sum").textContent = "Enter a steel thickness."; $("res").innerHTML = ""; return; }
+    var hits = TIPS.filter(function (r) {
+      return (!gas || r.fuel_gases.indexOf(gas) >= 0) && (!style || r.torch_style === style) &&
+        mm >= r.cut_min_mm && mm <= r.cut_max_mm;
+    });
+    var label = (Math.round(mm * 10) / 10) + " mm" + ($("u").value === "in" ? " (" + t + " in)" : " (" + (mm / 25.4).toFixed(2) + " in)");
+    if (!hits.length) {
+      $("sum").textContent = "No tip in this chart covers " + label + (gas ? " for " + gas : "") + ". The chart covers 1–300 mm.";
+      $("res").innerHTML = "";
+      return;
+    }
+    $("sum").textContent = hits.length + " tip size" + (hits.length > 1 ? "s" : "") + " for " + label + (gas ? ", " + gas : "") + ":";
+    $("res").innerHTML = head() + hits.map(function (r) { return row(r, false); }).join("");
+  }
+
+  function chart() {
+    var fams = [];
+    TIPS.forEach(function (r) { if (fams.indexOf(r.family) < 0) fams.push(r.family); });
+    $("chart").innerHTML = fams.map(function (f) {
+      var rows = TIPS.filter(function (r) { return r.family === f; });
+      var r0 = rows[0];
+      return "<div class=\"card\"><h3>" + esc(f) + " <span class=\"tag\">" + esc(r0.torch_style) + "</span><span class=\"tag\">" + esc(r0.fuel_gases.join(", ")) + "</span></h3>" +
+        "<p class=\"note\">Fits " + esc(r0.fits) + ". FHtorch model " + esc(r0.model) + " · <a href=\"" + esc(r0.source_url + UTM) + "\">product page</a></p>" +
+        "<div class=\"scroll\"><table>" + head() + rows.map(function (r) { return row(r, false); }).join("") + "</table></div></div>";
+    }).join("");
+  }
+
+  ["gas", "t", "u", "style"].forEach(function (id) { $(id).addEventListener("input", update); $(id).addEventListener("change", update); });
+  chart();
+  update();
+})();
+</script>
+</body>
+</html>
