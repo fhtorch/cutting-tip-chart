@@ -1,5 +1,7 @@
 # FHtorch Oxy-Fuel Cutting Tip Chart
 
+[![FHtorch oxy-fuel cutting tip size chart and picker](social-card.png)](https://fhtorch.github.io/cutting-tip-chart/)
+
 Free, open data and a simple size picker for oxy-fuel cutting tips:
 **Victor-type 1-101 and GPN, Harris-type 6290 and 6290NXM, British-style ANM, ANME and PNME, and type A LPG nozzles.**
 
