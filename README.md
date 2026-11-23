@@ -178,6 +178,11 @@ Fits two-piece type A nozzles (brass body, copper tip). Source: [fhtorch.com/pro
 
 These are chart values for FHtorch tips. Always follow the instructions of your torch and regulator manufacturer, and your local safety rules.
 
+## More free FHtorch tools
+
+- [Gas welding tip size chart and finder](https://fhtorch.github.io/welding-tip-chart/) ([source](https://github.com/fhtorch/welding-tip-chart))
+- [Flashback arrestor selector](https://fhtorch.github.io/flashback-arrestor-selector/) ([source](https://github.com/fhtorch/flashback-arrestor-selector))
+
 ## About FHtorch
 
 FHtorch supplies distributors and welding supply stores with cutting torches, welding torches, cutting and welding tips, flashback arrestors and torch kits. Our torches are made at our family-owned factory in Ningbo, China, registered in 2019. MOQ 100–300 units per model; custom logo marking (OEM) available.
